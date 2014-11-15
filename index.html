@@ -10,7 +10,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="css/normalize/normalize.min.css">
+<!--        <link rel="stylesheet" href="css/normalize/normalize.min.css">-->
         <link rel="stylesheet" href="css/bondle.css">
 
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
@@ -20,17 +20,15 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div class="b-page">
-			<div class="page__line page__line_dark">
 <!--==================================
 	HEADER
 ================================== -->
+			<div class="page__line page__line_dark clearfix">
 				<div class="b-wrapper b-wrapper_header">
-					<div class="wrapper__column">
-						<div class="b-logo">
-							<img src="" alt="your-logo">
-						</div>
+					<div class="wrapper__column wrapper__column_left">
+						<div class="b-logo b-logo_header"></div>
 					</div>
-					<div class="wrapper__column">
+					<div class="wrapper__column wrapper__column_right">
 						<div class="b-main-menu">
 							<div class="main-menu__content"><a href="" class="menu-link">Home</a></div>
 							<div class="main-menu__content"><a href="" class="menu-link">Blog</a></div>
@@ -41,14 +39,17 @@
 					</div>
 				</div>
 			</div>
-       		<div class="page__line">
-				<div class="b-wrapper b-wrapper_article">
 <!--==================================
-	SLIDER
+	ARTICLE
 ================================== -->
-					<div class="wrapper__line">
+       		<div class="page__line clearfix">
+				<div class="b-wrapper b-wrapper_article clearfix">
+<!-- ==========
+	SLIDER
+========== -->
+					<div class="wrapper__line clearfix">
 						<div class="b-slider">
-							<div class="slider__slide">
+							<div class="slider__list">
 								<div class="b-slide">
 									<img src="" alt="slide01">
 								</div>
@@ -70,20 +71,20 @@
 							</div>
 						</div>
 					</div>
-<!--==================================
+<!-- ==========
 	UTP
-================================== -->
-					<div class="wrapper__line">
+========== -->
+					<div class="wrapper__line clearfix">
 						<div class="b-utp">
 							<p>Hey, welcome awersome web mock up.</p>
 							<p>You can place information here about what you do!</p>
 						</div>
 					</div>
-<!--==================================
+<!-- ==========
 	CONTENT
-================================== -->
-					<div class="wrapper__line">
-						<div class="b-content">
+========== -->
+					<div class="wrapper__line clearfix">
+						<div class="b-content clearfix">
 <!-- ============   1 post   ============ -->
 							<div class="content__section">
 								<div class="b-content-img"><img src="" alt="post image"></div>
@@ -163,14 +164,14 @@
 					</div>
 				</div>
 			</div>
-			<div class="page__line page__line_gray">
 <!--==================================
 	FOOTER
 ================================== -->
-				<div class="b-wrapper b-wrapper_footer">
+			<div class="page__line page__line_gray">
+				<div class="b-wrapper b-wrapper_footer clearfix">
 <!-- ============   logo   ============ -->
-					<div class="wrapper__column wrapper__column_logo">
-						<div class="b-logo"><img src="" alt="your logo"></div>
+					<div class="wrapper__column wrapper__column_footer wrapper__column_logo">
+						<div class="b-logo b-logo_footer"></div>
 						<div class="b-text">
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
 							Eligendi necessitatibus consectetur perferendis, doloribus dignissimos!</p>
@@ -181,7 +182,7 @@
 						<div class="b-continue"><a href="">Find out more...</a></div>
 					</div>
 <!-- ============   twitter   ============ -->
-					<div class="wrapper__column wrapper__column_twitter">
+					<div class="wrapper__column wrapper__column_footer wrapper__column_twitter">
 						<div class="b-footer-header">
 							<h2>TWITTER FEED</h2>
 						</div>
@@ -198,7 +199,7 @@
 						</div>
 					</div>
 <!-- ============   latest post   ============ -->
-					<div class="wrapper__column wrapper__column_latest">
+					<div class="wrapper__column wrapper__column_footer wrapper__column_latest">
 						<div class="b-footer-header">
 							<h2>LATEST POST</h2>
 						</div>
@@ -219,7 +220,7 @@
 						<div class="b-continue"><a href="">Continue reading...</a></div>
 					</div>
 <!-- ============   flickr   ============ -->
-					<div class="wrapper__column wrapper__column_flickr">
+					<div class="wrapper__column wrapper__column_footer wrapper__column_flickr">
 						<div class="b-footer-header">
 							<h2>FLICKR FEED</h2>
 						</div>
