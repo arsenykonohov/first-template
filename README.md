@@ -15,8 +15,8 @@ One of my training home task.
 	- favicon
 	- 404 page
 
-3) Added folders in css dir normalize & fonts (dev)
+3) Added folders in css dir normalize & fonts (dev). Replace favicon. Preparation less files.
 
 4) BEM-html code
 
-5) 
+5) BEM-css code
