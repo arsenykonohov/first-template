@@ -1,8 +1,8 @@
 first-template
 ==============
 
-first-template
-
+One of my training home task.
+---
 
 1) initialize project (master)
 
