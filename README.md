@@ -16,3 +16,7 @@ first-template
 	- 404 page
 
 3) Added folders in css dir normalize & fonts (dev)
+
+4) BEM-html code
+
+5) 
