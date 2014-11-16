@@ -12,6 +12,7 @@ textarea {
 html {
   font-size: 1em;
   line-height: 1.4;
+  font-family: Regular;
 }
 body {
   margin: 0;
@@ -59,4 +60,29 @@ textarea {
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
+}
+/* ========== Helper classes ========== */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  *zoom: 1;
+}
+/* ========== FontFace ========== */
+@font-face {
+  font-family: BoldCond;
+  src: url('font/MyriadPro-BoldCond.otf');
+}
+@font-face {
+  font-family: Cond;
+  src: url('font/MyriadPro-Cond.otf');
+}
+@font-face {
+  font-family: Regular;
+  src: url('font/MyriadPro-Regular.otf');
 }

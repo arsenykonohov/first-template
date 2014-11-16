@@ -2,64 +2,21 @@
    Main
    ========================================================================== */
 
-/* ========== Helper classes ========== */
-//.ir {
-//    background-color: transparent;
-//    border: 0;
-//    overflow: hidden;
-//    *text-indent: -9999px;
-//}
-//
-//.ir:before {
-//    content: "";
-//    display: block;
-//    width: 0;
-//    height: 150%;
-//}
-//
-//.hidden {
-//    display: none !important;
-//    visibility: hidden;
-//}
-//
-//.visuallyhidden {
-//    border: 0;
-//    clip: rect(0 0 0 0);
-//    height: 1px;
-//    margin: -1px;
-//    overflow: hidden;
-//    padding: 0;
-//    position: absolute;
-//    width: 1px;
-//}
-//
-//.visuallyhidden.focusable:active,
-//.visuallyhidden.focusable:focus {
-//    clip: auto;
-//    height: auto;
-//    margin: 0;
-//    overflow: visible;
-//    position: static;
-//    width: auto;
-//}
-//
-//.invisible {
-//    visibility: hidden;
-//}
-
-.clearfix:before,
-.clearfix:after {
-    content: " ";
-    display: table;
-}
-.clearfix:after {
-    clear: both;
-}
-.clearfix {
-    *zoom: 1;
-}
-
 /* ========== variables ========== */
+.clearfix {
+    *zoom: ~"expression(this.runtimeStyle.zoom='1', this.appendChild(document.createElement('br')).style.cssText='clear:both;font:0/0 serif')";
+    zoom: 1 !ie;
+    
+    &:before,
+	&:after {
+		content: "";
+		display: table;
+	}
+	
+	&:after {
+		clear: both;
+	}
+}
 
 .bgColorTop {
 	background: rgba(68,68,68,1);
@@ -83,11 +40,21 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#e0e0e0', GradientType=0 );
 }
 
+
+.radius (@value: 50%;) {
+	-webkit-border-radius: @value;
+	-moz-border-radius: @value;
+	-ms-border-radius: @value;
+	-o-border-radius: @value;
+	border-radius: @value;
+}
+
 @wrapperWidth: 940px;
 @headerHeight: 100px;
 @footerHeight: 290px;
 @footerLogo: 60px;
-@generalFont: sans-serif;
+@generalFont: Regular;
+@toggle: 10px;
 
 /* ========== page, page lines & wrapper in this lines ========== */
 
@@ -140,7 +107,7 @@
 
 /*  logo  */
 .b-logo {
-	background: url(../../img/logo.png) 0 45% no-repeat;
+	background: url(../../img/logo.png) 0 47% no-repeat;
 	width: 160px;
 }
 .b-logo_header {
@@ -152,16 +119,17 @@
 	text-align: center;
 }
 .main-menu__content {
-	display: inline-block;
+	float: left;
+	padding: 10px 0 0 0;
 }
 .menu-link {
 	color: #fff;
 	display: block;
 	font: bold 1.2em @generalFont;
-	line-height: @headerHeight;
-	padding: 0 10px;
+	line-height: (@headerHeight)-10px;
+	padding: 0 20px;
 	&:hover{
-		text-shadow: 0px 0px 5px #eee;
+		text-shadow: 0px 0px 6px #fff;
 	}
 }
 
@@ -178,19 +146,40 @@
 .b-slider {
 	min-height: 350px;
 	margin: 60px 0 0 0;
+	overflow: hidden;
+	position: relative;
 	width: auto;
 }
 .slider__list {
-	
+	height: 100%;
+	position: absolute;
+	width: 100%;
+	z-index: 1;
 }
 .b-slide {
-	
+	display: none;
 }
+
+.active {
+	display: block;
+}
+
 .slider__toggle {
-	
+	position: absolute;
+	bottom: 0;
+	left: 45.8%;
+	z-index: 2;
 }
-.b-toggle {
-	
+.b-toggle {7777777777777777777777777777777777777777777777777777777777777777777777777777
+	background: rgba(255, 255, 255, 0.5);
+	float: left;
+	height: @toggle;
+	margin: 0 5px 7px 5px;
+	width: @toggle;
+	.radius;
+	&:hover {
+		background: rgba(255, 255, 255, 1);
+	}
 }
 
 
