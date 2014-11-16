@@ -62,17 +62,6 @@ textarea {
   padding: 0.2em 0;
 }
 /* ========== Helper classes ========== */
-.clearfix:before,
-.clearfix:after {
-  content: " ";
-  display: table;
-}
-.clearfix:after {
-  clear: both;
-}
-.clearfix {
-  *zoom: 1;
-}
 /* ========== FontFace ========== */
 @font-face {
   font-family: BoldCond;

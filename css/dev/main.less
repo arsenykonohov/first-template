@@ -6,13 +6,11 @@
 .clearfix {
     *zoom: ~"expression(this.runtimeStyle.zoom='1', this.appendChild(document.createElement('br')).style.cssText='clear:both;font:0/0 serif')";
     zoom: 1 !ie;
-    
     &:before,
 	&:after {
 		content: "";
 		display: table;
 	}
-	
 	&:after {
 		clear: both;
 	}
@@ -40,6 +38,11 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#e0e0e0', GradientType=0 );
 }
 
+.sadow {
+	-webkit-box-shadow: 0px 0px 1px 2px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 0px 1px 2px rgba(0,0,0,0.2);
+	box-shadow: 0px 0px 1px 2px rgba(0,0,0,0.2);
+}
 
 .radius (@value: 50%;) {
 	-webkit-border-radius: @value;
@@ -53,9 +56,15 @@
 @headerHeight: 100px;
 @footerHeight: 290px;
 @footerLogo: 60px;
-@generalFont: Regular;
+@sliderHeight: 350px;
+@sliderWidth: 940px;
 @toggle: 10px;
 
+
+@generalFont: Regular;
+
+
+@link: #2a99d8;
 /* ========== page, page lines & wrapper in this lines ========== */
 
 .b-page {
@@ -64,15 +73,18 @@
 	min-width: 100%;
 	padding: 0;
 	position: relative;
+	.clearfix;
 }
 .page__line {
 	position: relative;
 	width: 100%;
+	.clearfix;
 }
 .page__line_dark {
 	.bgColorTop;
 }
 .page__line_gray {
+	margin: 120px auto 0 auto;
 	.bgColorBottom;
 }
 
@@ -84,9 +96,10 @@
 	margin: 0 auto;
 	position: relative;
 	width: @wrapperWidth;
+	.clearfix;
 }
 .wrapper__column {
-	
+	.clearfix;
 }
 .wrapper__column_left {
 	float: left;
@@ -96,8 +109,16 @@
 }
 .wrapper__line {
 	width: 100%;
+	.clearfix;
 }
 
+.active {
+	display: block;
+}
+.bold {
+	display: inline-block;
+	font-weight: bold;
+}
 
 
 /* ========== HEADER ========== */
@@ -108,6 +129,7 @@
 /*  logo  */
 .b-logo {
 	background: url(../../img/logo.png) 0 47% no-repeat;
+	display: block;
 	width: 160px;
 }
 .b-logo_header {
@@ -117,6 +139,7 @@
 /*  menu  */
 .b-main-menu {
 	text-align: center;
+	.clearfix;
 }
 .main-menu__content {
 	float: left;
@@ -144,11 +167,11 @@
 
 /* ========== SLIDER ========== */
 .b-slider {
-	min-height: 350px;
+	height: @sliderHeight;
 	margin: 60px 0 0 0;
 	overflow: hidden;
 	position: relative;
-	width: auto;
+	width: @sliderWidth;
 }
 .slider__list {
 	height: 100%;
@@ -158,27 +181,56 @@
 }
 .b-slide {
 	display: none;
-}
-
-.active {
-	display: block;
+	position: absolute;
 }
 
 .slider__toggle {
-	position: absolute;
-	bottom: 0;
-	left: 45.8%;
+	height: 100%;
+	position: relative;
+	width: 100%;
 	z-index: 2;
 }
-.b-toggle {7777777777777777777777777777777777777777777777777777777777777777777777777777
-	background: rgba(255, 255, 255, 0.5);
+.b-toggle-left {
+	display: block;
 	float: left;
+	position: relative;
+	height: 100%;
+	width: 50%;
+	&:hover {
+		background: url(../../img/arrow-left.png) 0 50% no-repeat;
+	}
+}
+.b-toggle-right {
+	display: block;
+	float: right;
+	position: relative;
+	height: 100%;
+	width: 50%;
+	&:hover {
+		background: url(../../img/arrow-right.png) 100% 50% no-repeat;
+	}
+}
+
+.slider__toggle-mark {
+	position: relative;
+	bottom: 23px;
+	left: 0;
+	text-align: center;
+	width: 100%;
+	z-index: 3;
+	.clearfix;
+}
+.b-toggle-mark {
+	background: rgba(255, 255, 255, 0.5);
+	display: inline-block;
 	height: @toggle;
-	margin: 0 5px 7px 5px;
+	margin: 0 3px;
+	position: relative;
 	width: @toggle;
 	.radius;
 	&:hover {
 		background: rgba(255, 255, 255, 1);
+		.sadow;
 	}
 }
 
@@ -187,6 +239,8 @@
 /* ========== UTP ========== */
 .b-utp {
 	margin: 60px 0 0 0;
+	text-align: center;
+	font: normal 1.5em @generalFont;
 }
 
 
@@ -194,6 +248,7 @@
 /* ========== CONTENT ========== */
 .b-content {
 	margin: 120px 0 0 0;
+	.clearfix;
 }
 .content__section {
 	float: left;
@@ -209,18 +264,32 @@
 	
 }
 .b-text {
-	font: normal 0.8em @generalFont;
+	font-size: 0.8em;
+}
+.b-text_bold {
+	font-family: BoldCond;
+	font-size: 1.1em;
 }
 .b-continue {
-	
+	color: @link;
+	font-size: 0.8em;
+	font-weight: bold;
+	&:link, :visited {
+		color: @link;
+	}
 }
-
+.b-continue_italic {
+	font-style: italic;
+}
+.b-continue_normal {
+	font-style: normal;
+}
 
 
 /* ========== FOOTER ========== */
 .b-wrapper_footer {
-	height: @footerHeight;
-	margin: 120px auto 0 auto;
+	min-height: @footerHeight;
+	padding: 20px 0 0 0;
 }
 .wrapper__column_footer {
 	float: left;
@@ -242,11 +311,18 @@
 	
 }
 .b-footer-header {
-	
+	color: #777;
+	font-family: Cond;
+	font-size: 0.6em;
+	text-shadow: 1px 1px 0px #fff;
 }
 .b-social-img {
 	
 }
 .b-social-img__link {
 	
+}
+
+.active {
+	display: block;
 }
