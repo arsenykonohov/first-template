@@ -38,10 +38,10 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#e0e0e0', GradientType=0 );
 }
 
-.sadow {
-	-webkit-box-shadow: 0px 0px 1px 2px rgba(0,0,0,0.2);
-	-moz-box-shadow: 0px 0px 1px 2px rgba(0,0,0,0.2);
-	box-shadow: 0px 0px 1px 2px rgba(0,0,0,0.2);
+.sadow (@sh: 0px 0px 1px 2px rgba(0,0,0,0.2);) {
+	-webkit-box-shadow: @sh;
+	-moz-box-shadow: @sh;
+	box-shadow: @sh;
 }
 
 .radius (@value: 50%;) {
@@ -52,18 +52,30 @@
 	border-radius: @value;
 }
 
+.dateCommentLink {
+	color: inherit;
+	&:link, :visited {
+	color: inherit;
+	}
+	&:hover {
+		color: #c00;
+	}
+}
+
 @wrapperWidth: 940px;
 @headerHeight: 100px;
-@footerHeight: 290px;
+@footerHeight: 300px;
 @footerLogo: 60px;
 @sliderHeight: 350px;
 @sliderWidth: 940px;
 @toggle: 10px;
-
+@postHeight: 460px;
+@postContentWidth: 220px;
+@footerPadding: 30px;
 
 @generalFont: Regular;
 
-
+@dateCommentLink: #aaa;
 @link: #2a99d8;
 /* ========== page, page lines & wrapper in this lines ========== */
 
@@ -85,6 +97,7 @@
 }
 .page__line_gray {
 	margin: 120px auto 0 auto;
+	padding: @footerPadding 0;
 	.bgColorBottom;
 }
 
@@ -128,7 +141,7 @@
 
 /*  logo  */
 .b-logo {
-	background: url(../../img/logo.png) 0 47% no-repeat;
+	background: url(../../img/logo.png) 0 50% no-repeat;
 	display: block;
 	width: 160px;
 }
@@ -180,7 +193,6 @@
 	z-index: 1;
 }
 .b-slide {
-	display: none;
 	position: absolute;
 }
 
@@ -246,37 +258,84 @@
 
 
 /* ========== CONTENT ========== */
+
+.postSet {
+	width: @postContentWidth;
+	float: left;
+	clear: both;
+}
+
+.dateCommentLink {
+	color: @dateCommentLink;
+	&:link, :visited {
+	color: @dateCommentLink;
+	}
+	&:hover {
+		color: #c00;
+	}
+}
+/* ========== */
+
 .b-content {
 	margin: 120px 0 0 0;
 	.clearfix;
 }
 .content__section {
 	float: left;
+	min-height: @postHeight;
+	position: relative;
 	width: 25%;
 }
 .b-content-img {
-	
+	.postSet;
 }
 .b-content-head {
-	
+	.postSet;
 }
 .b-date-comment {
-	
+	color: @dateCommentLink;
+	font-size: 0.75em;
+	.postSet;
+	a {
+	.dateCommentLink;
+	}
+}
+a.b-date-comment {
+	display: block;
+	.dateCommentLink;
 }
 .b-text {
+	color: #888;
 	font-size: 0.8em;
+	.postSet;
+}
+.b-text_post {
+	padding: 15px 0 0 0;
+	p {
+	padding: 5px 0 0 0;
+	}
 }
 .b-text_bold {
 	font-family: BoldCond;
 	font-size: 1.1em;
 }
 .b-continue {
+	bottom: 0;
 	color: @link;
+	display: block;
 	font-size: 0.8em;
 	font-weight: bold;
+	left: 0;
+	position: absolute;
+	text-align: right;
+	width: @postContentWidth;
 	&:link, :visited {
 		color: @link;
 	}
+	&:hover {
+		text-decoration: underline !important;
+	}
+	
 }
 .b-continue_italic {
 	font-style: italic;
@@ -288,11 +347,12 @@
 
 /* ========== FOOTER ========== */
 .b-wrapper_footer {
-	min-height: @footerHeight;
-	padding: 20px 0 0 0;
+	min-height: (@footerHeight)-(@footerPadding*2);
 }
 .wrapper__column_footer {
 	float: left;
+	min-height: (@footerHeight)-(@footerPadding*2);
+	position: relative;
 	width: 25%;
 }
 .wrapper__column_logo {
@@ -316,13 +376,15 @@
 	font-size: 0.6em;
 	text-shadow: 1px 1px 0px #fff;
 }
+.b-text_footer {
+	padding: 5px 0 0 0;
+	p {
+		padding: 5px 0 0 0;
+	}
+}
 .b-social-img {
 	
 }
 .b-social-img__link {
 	
-}
-
-.active {
-	display: block;
 }

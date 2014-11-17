@@ -62,6 +62,13 @@ textarea {
   padding: 0.2em 0;
 }
 /* ========== Helper classes ========== */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+.active {
+  display: block;
+}
 /* ========== FontFace ========== */
 @font-face {
   font-family: BoldCond;

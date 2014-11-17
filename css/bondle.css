@@ -62,6 +62,13 @@ textarea {
   padding: 0.2em 0;
 }
 /* ========== Helper classes ========== */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+.active {
+  display: block;
+}
 /* ========== FontFace ========== */
 @font-face {
   font-family: BoldCond;
@@ -111,10 +118,15 @@ textarea {
   background: linear-gradient(to bottom, #ededed 0%, #e0e0e0 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#e0e0e0', GradientType=0);
 }
-.sadow {
-  -webkit-box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.2);
+.dateCommentLink {
+  color: inherit;
+}
+.dateCommentLink:link,
+.dateCommentLink :visited {
+  color: inherit;
+}
+.dateCommentLink:hover {
+  color: #c00;
 }
 /* ========== page, page lines & wrapper in this lines ========== */
 .b-page {
@@ -160,6 +172,7 @@ textarea {
 }
 .page__line_gray {
   margin: 120px auto 0 auto;
+  padding: 30px 0;
   background: #ededed;
   background: -moz-linear-gradient(top, #ededed 0%, #e0e0e0 100%);
   background: -webkit-gradient(left top, left bottom, color-stop(0%, #ededed), color-stop(100%, #e0e0e0));
@@ -229,7 +242,7 @@ textarea {
 }
 /*  logo  */
 .b-logo {
-  background: url(../../img/logo.png) 0 47% no-repeat;
+  background: url(../../img/logo.png) 0 50% no-repeat;
   display: block;
   width: 160px;
 }
@@ -280,7 +293,6 @@ textarea {
   z-index: 1;
 }
 .b-slide {
-  display: none;
   position: absolute;
 }
 .slider__toggle {
@@ -353,6 +365,22 @@ textarea {
   font: normal 1.5em Regular;
 }
 /* ========== CONTENT ========== */
+.postSet {
+  width: 220px;
+  float: left;
+  clear: both;
+}
+.dateCommentLink {
+  color: #aaaaaa;
+}
+.dateCommentLink:link,
+.dateCommentLink :visited {
+  color: #aaaaaa;
+}
+.dateCommentLink:hover {
+  color: #c00;
+}
+/* ========== */
 .b-content {
   margin: 120px 0 0 0;
   *zoom: expression(this.runtimeStyle.zoom='1', this.appendChild(document.createElement('br')).style.cssText='clear:both;font:0/0 serif');
@@ -368,23 +396,98 @@ textarea {
 }
 .content__section {
   float: left;
+  min-height: 460px;
+  position: relative;
   width: 25%;
 }
+.b-content-img {
+  width: 220px;
+  float: left;
+  clear: both;
+}
+.b-content-head {
+  width: 220px;
+  float: left;
+  clear: both;
+}
+.b-date-comment {
+  color: #aaaaaa;
+  font-size: 0.75em;
+  width: 220px;
+  float: left;
+  clear: both;
+}
+.b-date-comment a {
+  color: inherit;
+  color: #aaaaaa;
+}
+.b-date-comment a:link,
+.b-date-comment a :visited {
+  color: inherit;
+}
+.b-date-comment a:hover {
+  color: #c00;
+}
+.b-date-comment a:link,
+.b-date-comment a :visited {
+  color: #aaaaaa;
+}
+.b-date-comment a:hover {
+  color: #c00;
+}
+a.b-date-comment {
+  display: block;
+  color: inherit;
+  color: #aaaaaa;
+}
+a.b-date-comment:link,
+a.b-date-comment :visited {
+  color: inherit;
+}
+a.b-date-comment:hover {
+  color: #c00;
+}
+a.b-date-comment:link,
+a.b-date-comment :visited {
+  color: #aaaaaa;
+}
+a.b-date-comment:hover {
+  color: #c00;
+}
 .b-text {
+  color: #888;
   font-size: 0.8em;
+  width: 220px;
+  float: left;
+  clear: both;
+}
+.b-text_post {
+  padding: 15px 0 0 0;
+}
+.b-text_post p {
+  padding: 5px 0 0 0;
 }
 .b-text_bold {
   font-family: BoldCond;
   font-size: 1.1em;
 }
 .b-continue {
+  bottom: 0;
   color: #2a99d8;
+  display: block;
   font-size: 0.8em;
   font-weight: bold;
+  left: 0;
+  position: absolute;
+  text-align: right;
+  width: 220px;
 }
 .b-continue:link,
 .b-continue :visited {
   color: #2a99d8;
+}
+.b-continue:hover {
+  text-decoration: underline !important;
 }
 .b-continue_italic {
   font-style: italic;
@@ -394,11 +497,12 @@ textarea {
 }
 /* ========== FOOTER ========== */
 .b-wrapper_footer {
-  min-height: 290px;
-  padding: 20px 0 0 0;
+  min-height: 240px;
 }
 .wrapper__column_footer {
   float: left;
+  min-height: 240px;
+  position: relative;
   width: 25%;
 }
 .b-logo_footer {
@@ -410,8 +514,11 @@ textarea {
   font-size: 0.6em;
   text-shadow: 1px 1px 0px #fff;
 }
-.active {
-  display: block;
+.b-text_footer {
+  padding: 5px 0 0 0;
+}
+.b-text_footer p {
+  padding: 5px 0 0 0;
 }
 /* ==========================================================================
    Media
