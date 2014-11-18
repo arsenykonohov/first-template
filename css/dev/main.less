@@ -3,6 +3,7 @@
    ========================================================================== */
 
 /* ========== variables ========== */
+
 .clearfix {
     *zoom: ~"expression(this.runtimeStyle.zoom='1', this.appendChild(document.createElement('br')).style.cssText='clear:both;font:0/0 serif')";
     zoom: 1 !ie;
@@ -38,7 +39,7 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#e0e0e0', GradientType=0 );
 }
 
-.sadow (@sh: 0px 0px 1px 2px rgba(0,0,0,0.2);) {
+.sadow (@sh) {
 	-webkit-box-shadow: @sh;
 	-moz-box-shadow: @sh;
 	box-shadow: @sh;
@@ -50,6 +51,10 @@
 	-ms-border-radius: @value;
 	-o-border-radius: @value;
 	border-radius: @value;
+}
+
+.borderImage (@brdim) {
+	border: @brdim solid #fff;
 }
 
 .dateCommentLink {
@@ -72,11 +77,17 @@
 @postHeight: 460px;
 @postContentWidth: 220px;
 @footerPadding: 30px;
+@flickrImage: 50px;
+
 
 @generalFont: Regular;
 
 @dateCommentLink: #aaa;
 @link: #2a99d8;
+
+
+
+
 /* ========== page, page lines & wrapper in this lines ========== */
 
 .b-page {
@@ -134,7 +145,9 @@
 }
 
 
+
 /* ========== HEADER ========== */
+
 .b-wrapper_header {
 	height: @headerHeight;
 }
@@ -172,6 +185,7 @@
 
 
 /* ========== ARTICLE ========== */
+
 .b-wrapper_article {
 	
 }
@@ -179,6 +193,7 @@
 
 
 /* ========== SLIDER ========== */
+
 .b-slider {
 	height: @sliderHeight;
 	margin: 60px 0 0 0;
@@ -242,15 +257,16 @@
 	.radius;
 	&:hover {
 		background: rgba(255, 255, 255, 1);
-		.sadow;
+		.sadow(@sh: 0px 0px 1px 2px rgba(0,0,0,0.2););
 	}
 }
 
 
 
 /* ========== UTP ========== */
+
 .b-utp {
-	margin: 60px 0 0 0;
+	padding: 60px 0 0 0;
 	text-align: center;
 	font: normal 1.5em @generalFont;
 }
@@ -264,7 +280,6 @@
 	float: left;
 	clear: both;
 }
-
 .dateCommentLink {
 	color: @dateCommentLink;
 	&:link, :visited {
@@ -290,11 +305,20 @@
 	.postSet;
 }
 .b-content-head {
+	font: bold 1.6em Cond;
+	padding: 15px 0 10px 0;
 	.postSet;
+	h1,h2,h3,h4,h5,h6 {
+		font-size: inherit !important;
+		font-weight: inherit;
+		margin: 0 !important;
+		padding: 0 !important;
+	}
 }
 .b-date-comment {
 	color: @dateCommentLink;
 	font-size: 0.75em;
+	padding: 5px 0 0 0;
 	.postSet;
 	a {
 	.dateCommentLink;
@@ -302,12 +326,17 @@
 }
 a.b-date-comment {
 	display: block;
+	padding: 5px 0 0 0;
 	.dateCommentLink;
 }
 .b-text {
 	color: #888;
 	font-size: 0.8em;
 	.postSet;
+}
+.b-text__link {
+	color: @link;
+	.continueLink;
 }
 .b-text_post {
 	padding: 15px 0 0 0;
@@ -319,9 +348,18 @@ a.b-date-comment {
 	font-family: BoldCond;
 	font-size: 1.1em;
 }
+/* ========== */
+
+.continueLink {
+	color: @link;
+	&:link, :visited {color: @link;}
+	&:hover {text-decoration: underline !important;}
+}
+
+/* ========== */
+
 .b-continue {
 	bottom: 0;
-	color: @link;
 	display: block;
 	font-size: 0.8em;
 	font-weight: bold;
@@ -329,13 +367,12 @@ a.b-date-comment {
 	position: absolute;
 	text-align: right;
 	width: @postContentWidth;
-	&:link, :visited {
-		color: @link;
+	a {
+		.continueLink;
 	}
-	&:hover {
-		text-decoration: underline !important;
-	}
-	
+}
+a.b-continue {
+	.continueLink;
 }
 .b-continue_italic {
 	font-style: italic;
@@ -345,7 +382,9 @@ a.b-date-comment {
 }
 
 
+
 /* ========== FOOTER ========== */
+
 .b-wrapper_footer {
 	min-height: (@footerHeight)-(@footerPadding*2);
 }
@@ -377,13 +416,37 @@ a.b-date-comment {
 	text-shadow: 1px 1px 0px #fff;
 }
 .b-text_footer {
-	padding: 5px 0 0 0;
+	padding: 10px 0 0 0;
 	p {
 		padding: 5px 0 0 0;
 	}
 }
 .b-social-img {
+	float: left;
+	overflow: hidden;
+}
+.b-social-img_flickr {
+	height: @flickrImage;
+	margin: 10px 10px 0 0;
+	width: @flickrImage;
+	.borderImage (@brdim: 3px;);
+	.sadow (@sh: 0px 0px 2px 2px rgba(0,0,0,0.1););
+	&:hover {
+		.sadow (@sh: 0px 4px 4px -1px rgba(0,0,0,0.5););
+		.borderImage (@brdim: 1px;);
+	}
+	a {
+		display: block;
+		height: 100%;
+		width: 100%;
+	}
 	
+	img {
+		height: 100%;
+		&:hover {
+//			.borderImage (@brdim: 5px;);
+		}
+	}
 }
 .b-social-img__link {
 	
