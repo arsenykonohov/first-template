@@ -285,7 +285,7 @@
 .postSet {
   width: 220px;
   float: left;
-  clear: both;
+  position: relative;
 }
 .dateCommentLink {
   color: #aaaaaa;
@@ -318,16 +318,43 @@
   width: 25%;
 }
 .b-content-img {
+  overflow: hidden;
   width: 220px;
   float: left;
-  clear: both;
+  position: relative;
+}
+.b-content-img:hover > .mesage {
+  display: block;
+}
+.content-img__link {
+  display: block;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+.mesage {
+  background: #333333 url(../../img/logo.png) 50% 20% no-repeat;
+  color: #fff;
+  display: none;
+  text-align: center;
+}
+.mesage__text {
+  border-top: solid 5px #c00;
+  display: block;
+  font: bold 1.8em Regular;
+  padding: 10px 0;
+  position: absolute;
+  text-transform: uppercase;
+  text-shadow: 0px 3px 1px #000;
+  top: 50%;
+  width: 100%;
 }
 .b-content-head {
   font: bold 1.6em Cond;
   padding: 15px 0 10px 0;
   width: 220px;
   float: left;
-  clear: both;
+  position: relative;
 }
 .b-content-head h1,
 .b-content-head h2,
@@ -346,7 +373,7 @@
   padding: 5px 0 0 0;
   width: 220px;
   float: left;
-  clear: both;
+  position: relative;
 }
 .b-date-comment a {
   color: inherit;
@@ -391,7 +418,7 @@ a.b-date-comment:hover {
   font-size: 0.8em;
   width: 220px;
   float: left;
-  clear: both;
+  position: relative;
 }
 .b-text__link {
   color: #2a99d8;
@@ -494,16 +521,16 @@ a.b-continue:hover {
   height: 50px;
   margin: 10px 10px 0 0;
   width: 50px;
-  border: 3px solid #ffffff;
-  -webkit-box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+  border: 3px solid #ededed;
+  -webkit-box-shadow: 0px 0px 1px 1px rgba(132, 132, 132, 0.1);
+  -moz-box-shadow: 0px 0px 1px 1px rgba(132, 132, 132, 0.1);
+  box-shadow: 0px 0px 1px 1px rgba(132, 132, 132, 0.1);
 }
 .b-social-img_flickr:hover {
   -webkit-box-shadow: 0px 4px 4px -1px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 4px 4px -1px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 4px 4px -1px rgba(0, 0, 0, 0.5);
-  border: 1px solid #ffffff;
+  border: 1px solid #ededed;
 }
 .b-social-img_flickr a {
   display: block;

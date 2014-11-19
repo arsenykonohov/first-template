@@ -54,7 +54,7 @@
 }
 
 .borderImage (@brdim) {
-	border: @brdim solid #fff;
+	border: @brdim solid rgba(237,237,237,1);
 }
 
 .dateCommentLink {
@@ -278,7 +278,7 @@
 .postSet {
 	width: @postContentWidth;
 	float: left;
-	clear: both;
+	position: relative;
 }
 .dateCommentLink {
 	color: @dateCommentLink;
@@ -302,7 +302,34 @@
 	width: 25%;
 }
 .b-content-img {
+	overflow: hidden;
 	.postSet;
+	&:hover > .mesage {
+		display: block;
+	}
+}
+.content-img__link {
+	display: block;
+	height: 100%;
+	position: absolute;
+	width: 100%;
+}
+.mesage {
+	background: #333 url(../../img/logo.png) 50% 20% no-repeat;
+	color: #fff;
+	display: none;
+	text-align: center;
+}
+.mesage__text {
+	border-top: solid 5px #c00;
+	display: block;
+	font: bold 1.8em Regular;
+	padding: 10px 0;
+	position: absolute;
+	text-transform: uppercase;
+	text-shadow: 0px 3px 1px #000;
+	top: 50%;
+	width: 100%;
 }
 .b-content-head {
 	font: bold 1.6em Cond;
@@ -430,7 +457,7 @@ a.b-continue {
 	margin: 10px 10px 0 0;
 	width: @flickrImage;
 	.borderImage (@brdim: 3px;);
-	.sadow (@sh: 0px 0px 2px 2px rgba(0,0,0,0.1););
+	.sadow (@sh: 0px 0px 1px 1px rgba(132, 132, 132, 0.1););
 	&:hover {
 		.sadow (@sh: 0px 4px 4px -1px rgba(0,0,0,0.5););
 		.borderImage (@brdim: 1px;);
