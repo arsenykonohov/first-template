@@ -39,7 +39,3 @@ workflow
 > speedTest (on [webpagetest.org](http://www.webpagetest.org/))
 	
 7) 
-	
-	
-	
-	
