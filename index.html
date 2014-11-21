@@ -10,7 +10,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="css/normalize/normalize.min.css">
+<!--        <link rel="stylesheet" href="css/normalize/normalize.min.css">-->
         <link rel="stylesheet" href="css/bondle.css">
 
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
@@ -20,17 +20,15 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div class="b-page">
-			<div class="page__line page__line_dark">
-<!--==================================
+<!--====================================================================
 	HEADER
-================================== -->
+==================================================================== -->
+			<div class="page__line page__line_dark">
 				<div class="b-wrapper b-wrapper_header">
-					<div class="wrapper__column">
-						<div class="b-logo">
-							<img src="" alt="your-logo">
-						</div>
+					<div class="wrapper__column wrapper__column_left">
+						<a href="" class="b-logo b-logo_header"></a>
 					</div>
-					<div class="wrapper__column">
+					<div class="wrapper__column wrapper__column_right">
 						<div class="b-main-menu">
 							<div class="main-menu__content"><a href="" class="menu-link">Home</a></div>
 							<div class="main-menu__content"><a href="" class="menu-link">Blog</a></div>
@@ -41,194 +39,233 @@
 					</div>
 				</div>
 			</div>
+<!--====================================================================
+	ARTICLE
+==================================================================== -->
        		<div class="page__line">
 				<div class="b-wrapper b-wrapper_article">
-<!--==================================
+<!-- ==========
 	SLIDER
-================================== -->
+========== -->
 					<div class="wrapper__line">
 						<div class="b-slider">
-							<div class="slider__slide">
-								<div class="b-slide">
-									<img src="" alt="slide01">
+							<div class="slider__list">
+								<div class="b-slide hidden">
+									<img src="img/slide_1.jpg" alt="slide">
 								</div>
-								<div class="b-slide">
-									<img src="" alt="slide02">
+								<div class="b-slide hidden">
+									<img src="img/slide_2.jpg" alt="slide">
 								</div>
-								<div class="b-slide">
-									<img src="" alt="slide03">
+								<div class="b-slide active_slide">
+									<img src="img/slide_3.jpg" alt="slide">
 								</div>
-								<div class="b-slide">
-									<img src="" alt="slide04">
+								<div class="b-slide hidden">
+									<img src="img/slide_4.jpg" alt="slide">
+								</div>
+								<div class="b-slide hidden">
+									<img src="img/slide_5.jpg" alt="slide">
+								</div>
+								<div class="b-slide hidden">
+									<img src="img/slide_6.jpg" alt="slide">
 								</div>
 							</div>
 							<div class="slider__toggle">
-								<div class="b-toggle"></div>
-								<div class="b-toggle"></div>
-								<div class="b-toggle"></div>
-								<div class="b-toggle"></div>
+								<a href="" class="b-toggle-left"></a>
+								<a href="" class="b-toggle-right"></a>
+							</div>
+							<div class="slider__toggle-mark">
+								<a href="" class="b-toggle-mark"></a>
+								<a href="" class="b-toggle-mark"></a>
+								<a href="" class="b-toggle-mark active_toggle"></a>
+								<a href="" class="b-toggle-mark"></a>
+								<a href="" class="b-toggle-mark"></a>
+								<a href="" class="b-toggle-mark"></a>
 							</div>
 						</div>
 					</div>
-<!--==================================
+<!-- ==========
 	UTP
-================================== -->
+========== -->
 					<div class="wrapper__line">
 						<div class="b-utp">
-							<p>Hey, welcome awersome web mock up.</p>
+							<p>Hey, welcome <span class="bold">awersome</span> web mock up.</p>
 							<p>You can place information here about what you do!</p>
 						</div>
 					</div>
-<!--==================================
+<!-- ==========
 	CONTENT
-================================== -->
+========== -->
 					<div class="wrapper__line">
 						<div class="b-content">
 <!-- ============   1 post   ============ -->
-							<div class="content__article">
-								<div class="b-content-img"><img src="" alt="post image"></div>
-								<div class="b-content-head">
-									<h2>Somthinng cool is coming.</h2>
+							<div class="content__section">
+								<div class="b-content-img">
+									<a class="content-img__link mesage" href="">
+										<span class="mesage__text">get<br>down</span>
+									</a>
+									<img src="img/post_1.jpg" alt="post image">
 								</div>
+								<div class="b-content-head">Somethinng cool is coming.</div>
 								<div class="b-date-comment">
 									<a href="">may 19.2014</a>
 									<span>&#8226</span>
 									<a href="">7 Comments</a>
 								</div>
-								<div class="b-text">
+								<div class="b-text b-text_post">
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-									Eligendi necessitatibus consectetur perferendis, doloribus dignissimos ratione 
-									sequi delectus error officiis quod numquam rerum consequatur non magni!</p>
+									Eligendi necessitatibus consectetur perferendis!</p>
 								</div>
-								<div class="b-continue"><a href="">Continue reading</a></div>
+								<div class="b-continue b-continue_italic"><a href="">Continue reading...</a></div>
 							</div>
-<!-- ============   1 post   ============ -->
-							<div class="content__article">
-								<div class="b-content-img"><img src="" alt="post image"></div>
-								<div class="b-content-head">
-									<h2>Section header</h2>
+<!-- ============   2 post   ============ -->
+							<div class="content__section">
+								<div class="b-content-img">
+									<a class="content-img__link mesage" href="">
+										<span class="mesage__text">not<br>surrender</span>
+									</a>
+									<img src="img/post_2.jpg" alt="post image">
 								</div>
+								<div class="b-content-head">Somethinng cool is coming.</div>
 								<div class="b-date-comment">
 									<a href="">may 19.2014</a>
 									<span>&#8226</span>
 									<a href="">7 Comments</a>
 								</div>
-								<div class="b-text">
+								<div class="b-text b-text_post">
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-									Eligendi necessitatibus consectetur perferendis, doloribus dignissimos ratione 
-									sequi delectus error officiis quod numquam rerum consequatur non magni!</p>
+									Eligendi necessitatibus consectetur!</p>
 								</div>
-								<div class="b-continue"><a href="">Continue reading</a></div>
+								<div class="b-continue b-continue_italic"><a href="">Continue reading...</a></div>
 							</div>
-<!-- ============   1 post   ============ -->
-							<div class="content__article">
-								<div class="b-content-img"><img src="" alt="post image"></div>
-								<div class="b-content-head">
-									<h2>Section header</h2>
+<!-- ============   3 post   ============ -->
+							<div class="content__section">
+								<div class="b-content-img">
+									<a class="content-img__link mesage" href="">
+										<span class="mesage__text">don't<br>be evil</span>
+									</a>
+									<img src="img/post_3.jpg" alt="post image">
 								</div>
+								<div class="b-content-head">Somethinng cool is coming.</div>
 								<div class="b-date-comment">
 									<a href="">may 19.2014</a>
 									<span>&#8226</span>
 									<a href="">7 Comments</a>
 								</div>
-								<div class="b-text">
+								<div class="b-text b-text_post">
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-									Eligendi necessitatibus consectetur perferendis, doloribus dignissimos ratione 
-									sequi delectus error officiis quod numquam rerum consequatur non magni!</p>
+									Eligendi, doloribus dignissimos ratione 
+									sequi delectus error rerum consequatur non magni!</p>
 								</div>
-								<div class="b-continue"><a href="">Continue reading</a></div>
+								<div class="b-continue b-continue_italic"><a href="">Continue reading...</a></div>
 							</div>
-<!-- ============   1 post   ============ -->
-							<div class="content__article">
-								<div class="b-content-head">
-									<h2>Section header</h2>
-								</div>
+<!-- ============   4 post   ============ -->
+							<div class="content__section">
+								<div class="b-content-head"><h2>Somethinng cool is coming.</h2></div>
 								<div class="b-date-comment">
 									<a href="">may 19.2014</a>
 									<span>&#8226</span>
 									<a href="">7 Comments</a>
 								</div>
-								<div class="b-text">
+								<div class="b-text b-text_post">
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-									Eligendi necessitatibus consectetur perferendis, doloribus dignissimos ratione 
+									Eligendi necessitatibus dignissimos ratione 
 									sequi delectus error officiis quod numquam rerum consequatur non magni!</p>
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
 									Eligendi necessitatibus consectetur perferendis, doloribus dignissimos ratione 
 									sequi delectus error officiis quod numquam rerum consequatur non magni!</p>
 								</div>
-								<div class="b-continue"><a href="">Continue reading</a></div>
+								<div class="b-continue b-continue_italic"><a href="">Continue reading...</a></div>
 							</div>
 <!-- ======================== -->
 						</div>
 					</div>
 				</div>
 			</div>
+<!--====================================================================
+	FOOTER
+==================================================================== -->
 			<div class="page__line page__line_gray">
-<!--==================================
-	SLIDER
-================================== -->
 				<div class="b-wrapper b-wrapper_footer">
 <!-- ============   logo   ============ -->
-					<div class="wrapper__column wrapper__column_logo">
-						<div class="b-logo"><img src="" alt="your logo"></div>
-						<div class="b-text">
+					<div class="wrapper__column wrapper__column_footer wrapper__column_logo">
+						<a href="" class="b-logo b-logo_footer"></a>
+						<div class="b-text b-text_footer">
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-							Eligendi necessitatibus consectetur perferendis, doloribus dignissimos!</p>
+							Eligendi necessitatibus, doloribus dignissimos!</p>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
 							Eligendi necessitatibus consectetur perferendis, doloribus dignissimos ratione 
-							sequi delectus error officiis quod numquam rerum consequatur non magni!</p>
+							sequi delectus error!</p>
 						</div>
-						<div class="b-continue"><a href="">Find out more...</a></div>
+						<a class="b-continue b-continue_normal" href="">Find out more...</a>
 					</div>
 <!-- ============   twitter   ============ -->
-					<div class="wrapper__column wrapper__column_twitter">
+					<div class="wrapper__column wrapper__column_footer wrapper__column_twitter">
 						<div class="b-footer-header">
 							<h2>TWITTER FEED</h2>
 						</div>
-						<div class="b-text">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-							Eligendi necessitatibus consectetur perferendis, doloribus dignissimos ratione 
-							sequi delectus error officiis quod numquam rerum consequatur non magni!</p>
+						<div class="b-text b-text_footer">
+							<p>Lorem ipsum <a class="b-text__link" href="">@dolor</a> sit amet, consectetur adipisicing elit. 
+							Eligendi necessitatibus consectetur perferendis, doloribus 
+							<a href="" class="b-text__link">dignissimos.com</a> ratione!</p>
 						</div>
-						<div class="b-date-comment"><a href="">may 19.2014</a></div>
-						<div class="b-text">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-							Eligendi necessitatibus consectetur perferendis, doloribus dignissimos ratione 
-							sequi delectus error officiis quod numquam rerum consequatur non magni!</p>
+						<a class="b-date-comment" href="">may 19.2014</a>
+						<div class="b-text b-text_footer">
+							<p>Lorem <a href="" class="b-text__link">@ipsum</a> dolor sit amet, consectetur adipisicing elit. 
+							Eligendi necessitatibus <a href="" class="b-text__link">@consectetur</a> perferendis, doloribus!</p>
 						</div>
 					</div>
 <!-- ============   latest post   ============ -->
-					<div class="wrapper__column wrapper__column_latest">
+					<div class="wrapper__column wrapper__column_footer wrapper__column_latest">
 						<div class="b-footer-header">
 							<h2>LATEST POST</h2>
 						</div>
-						<div class="b-text b-text_bold">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-							Eligendi necessitatibus consectetur perferendis!</p>
+						<div class="b-text b-text_footer b-text_bold">
+							<p>Lorem ipsum dolor sit amet, consectetur!</p>
 						</div>
 						<div class="b-date-comment">
 							<a href="">may 19.2014</a>
 							<span>&#8226</span>
 							<a href="">7 Comments</a>
 						</div>
-						<div class="b-text">
+						<div class="b-text b-text_footer">
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
 							Eligendi necessitatibus consectetur perferendis, doloribus dignissimos ratione 
-							sequi delectus error officiis quod numquam rerum consequatur non magni!</p>
+							sequi delectus error!</p>
 						</div>
-						<div class="b-continue"><a href="">Continue reading...</a></div>
+						<div class="b-continue b-continue_italic"><a href="">Continue reading...</a></div>
 					</div>
 <!-- ============   flickr   ============ -->
-					<div class="wrapper__column wrapper__column_flickr">
+					<div class="wrapper__column wrapper__column_footer wrapper__column_flickr">
 						<div class="b-footer-header">
 							<h2>FLICKR FEED</h2>
 						</div>
-						<div class="b-social-img"><a href="" class="b-social-img__link"><img src="" alt="FLICKR FEED"></a></div>
-						<div class="b-social-img"><a href="" class="b-social-img__link"><img src="" alt="FLICKR FEED"></a></div>
-						<div class="b-social-img"><a href="" class="b-social-img__link"><img src="" alt="FLICKR FEED"></a></div>
-						<div class="b-social-img"><a href="" class="b-social-img__link"><img src="" alt="FLICKR FEED"></a></div>
-						<div class="b-social-img"><a href="" class="b-social-img__link"><img src="" alt="FLICKR FEED"></a></div>
-						<div class="b-social-img"><a href="" class="b-social-img__link"><img src="" alt="FLICKR FEED"></a></div>
+						<div class="b-social-img b-social-img_flickr">
+							<a href="" class="b-social-img__link"><img src="img/flickr_pic_1.jpg" alt="flickr feed"></a>
+						</div>
+						<div class="b-social-img b-social-img_flickr">
+							<a href="" class="b-social-img__link"><img src="img/flickr_pic_2.jpg" alt="flickr feed"></a>
+						</div>
+						<div class="b-social-img b-social-img_flickr">
+							<a href="" class="b-social-img__link"><img src="img/flickr_pic_3.jpg" alt="flickr feed"></a>
+						</div>
+						<div class="b-social-img b-social-img_flickr">
+							<a href="" class="b-social-img__link"><img src="img/flickr_pic_4.jpg" alt="flickr feed"></a>
+						</div>
+						<div class="b-social-img b-social-img_flickr">
+							<a href="" class="b-social-img__link"><img src="img/flickr_pic_5.jpg" alt="flickr feed"></a>
+						</div>
+						<div class="b-social-img b-social-img_flickr">
+							<a href="" class="b-social-img__link"><img src="img/flickr_pic_6.jpg" alt="flickr feed"></a>
+						</div>
+						<div class="b-social-img b-social-img_flickr">
+							<a href="" class="b-social-img__link"><img src="img/flickr_pic_7.jpg" alt="flickr feed"></a>
+						</div>
+						<div class="b-social-img b-social-img_flickr">
+							<a href="" class="b-social-img__link"><img src="img/flickr_pic_8.jpg" alt="flickr feed"></a>
+						</div>
+						<div class="b-social-img b-social-img_flickr">
+							<a href="" class="b-social-img__link"><img src="img/flickr_pic_9.jpg" alt="flickr feed"></a>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -1,3 +1,494 @@
 /* ==========================================================================
    Main
    ========================================================================== */
+
+/* ========== variables ========== */
+
+.clearfix {
+    *zoom: ~"expression(this.runtimeStyle.zoom='1', this.appendChild(document.createElement('br')).style.cssText='clear:both;font:0/0 serif')";
+    zoom: 1 !ie;
+    &:before,
+	&:after {
+		content: "";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+.bgColorTop {
+	background: rgba(68,68,68,1);
+	background: -moz-linear-gradient(top, rgba(68,68,68,1) 0%, rgba(34,34,34,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(68,68,68,1)), color-stop(100%, rgba(34,34,34,1)));
+	background: -webkit-linear-gradient(top, rgba(68,68,68,1) 0%, rgba(34,34,34,1) 100%);
+	background: -o-linear-gradient(top, rgba(68,68,68,1) 0%, rgba(34,34,34,1) 100%);
+	background: -ms-linear-gradient(top, rgba(68,68,68,1) 0%, rgba(34,34,34,1) 100%);
+	background: linear-gradient(to bottom, rgba(68,68,68,1) 0%, rgba(34,34,34,1) 100%);
+	filter: 	progid:DXImageTransform.Microsoft.gradient( startColorstr='#444444', endColorstr='#222222', GradientType=0 );
+}
+
+.bgColorBottom {
+	background: rgba(237,237,237,1);
+	background: -moz-linear-gradient(top, rgba(237,237,237,1) 0%, rgba(224,224,224,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(237,237,237,1)), color-stop(100%, rgba(224,224,224,1)));
+	background: -webkit-linear-gradient(top, rgba(237,237,237,1) 0%, rgba(224,224,224,1) 100%);
+	background: -o-linear-gradient(top, rgba(237,237,237,1) 0%, rgba(224,224,224,1) 100%);
+	background: -ms-linear-gradient(top, rgba(237,237,237,1) 0%, rgba(224,224,224,1) 100%);
+	background: linear-gradient(to bottom, rgba(237,237,237,1) 0%, rgba(224,224,224,1) 100%);
+	filter: 	progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#e0e0e0', GradientType=0 );
+}
+
+.transition (@transition) {
+	-webkit-transition: @transition;
+	-moz-transition:    @transition;
+	-ms-transition:     @transition;
+	-o-transition:      @transition;
+	transition:      	@transition;
+}
+
+.sadow (@sh) {
+	-webkit-box-shadow: @sh;
+	-moz-box-shadow: 	@sh;
+	box-shadow: 		@sh;
+}
+
+.radius (@value: 50%;) {
+	-webkit-border-radius: 	@value;
+	-moz-border-radius: 	@value;
+	-ms-border-radius: 		@value;
+	-o-border-radius: 		@value;
+	border-radius: 			@value;
+}
+
+.borderImage (@brdim) {
+	border: @brdim solid rgba(237,237,237,0.1);
+}
+
+.dateCommentLink {
+	color: inherit;
+	&:link, :visited {
+	color: inherit;
+	}
+	&:hover {
+		color: #c00;
+	}
+}
+
+@wrapperWidth: 940px;
+@headerHeight: 100px;
+@footerHeight: 300px;
+@footerLogo: 60px;
+@sliderHeight: 350px;
+@sliderWidth: 940px;
+@toggle: 10px;
+@postHeight: 460px;
+@postContentWidth: 220px;
+@footerPadding: 30px;
+@flickrImage: 50px;
+
+
+@generalFont: Regular;
+
+@dateCommentLink: #aaa;
+@link: #2a99d8;
+
+
+
+
+/* ========== page, page lines & wrapper in this lines ========== */
+
+.b-page {
+	margin: 0;
+	min-height: 100%;
+	min-width: 100%;
+	padding: 0;
+	position: relative;
+	.clearfix;
+}
+.page__line {
+	position: relative;
+	width: 100%;
+	.clearfix;
+}
+.page__line_dark {
+	.bgColorTop;
+}
+.page__line_gray {
+	margin: 120px auto 0 auto;
+	padding: @footerPadding 0;
+	.bgColorBottom;
+}
+
+
+
+/*  wrappers  */
+
+.b-wrapper {
+	margin: 0 auto;
+	position: relative;
+	width: @wrapperWidth;
+	.clearfix;
+}
+.wrapper__column {
+	.clearfix;
+}
+.wrapper__column_left {
+	float: left;
+}
+.wrapper__column_right {
+	float: right;
+}
+.wrapper__line {
+	width: 100%;
+	.clearfix;
+}
+
+.active_slide {
+	display: block;
+}
+.active_toggle {
+	background: rgba(255, 255, 255, 1) !important;
+	.sadow(@sh: 0px 0px 1px 2px rgba(0,0,0,0.2););
+}
+.bold {
+	display: inline-block;
+	font-weight: bold;
+}
+
+
+
+/* ========== HEADER ========== */
+
+.b-wrapper_header {
+	height: @headerHeight;
+}
+
+/*  logo  */
+.b-logo {
+	background: url(../../img/logo.png) 0 50% no-repeat;
+	display: block;
+	width: 160px;
+}
+.b-logo_header {
+	height: @headerHeight;
+}
+
+/*  menu  */
+.b-main-menu {
+	text-align: center;
+	.clearfix;
+}
+.main-menu__content {
+	float: left;
+	padding: 10px 0 0 0;
+}
+.menu-link {
+	color: #fff;
+	display: block;
+	font: bold 1.2em @generalFont;
+	line-height: (@headerHeight)-10px;
+	padding: 0 20px;
+	&:hover{
+		text-shadow: 0px 0px 6px #fff;
+	}
+}
+
+
+
+/* ========== ARTICLE ========== */
+
+.b-wrapper_article {
+	
+}
+
+
+
+/* ========== SLIDER ========== */
+
+.b-slider {
+	height: @sliderHeight;
+	margin: 60px 0 0 0;
+	overflow: hidden;
+	position: relative;
+	width: @sliderWidth;
+}
+.slider__list {
+	height: 100%;
+	position: absolute;
+	width: 100%;
+	z-index: 1;
+}
+.b-slide {
+	position: absolute;
+}
+
+.slider__toggle {
+	height: 100%;
+	position: relative;
+	width: 100%;
+	z-index: 2;
+}
+.b-toggle-left {
+	display: block;
+	float: left;
+	position: relative;
+	height: 100%;
+	width: 50%;
+	&:hover {
+		background: url(../../img/arrow-left.png) 0 50% no-repeat;
+	}
+}
+.b-toggle-right {
+	display: block;
+	float: right;
+	position: relative;
+	height: 100%;
+	width: 50%;
+	&:hover {
+		background: url(../../img/arrow-right.png) 100% 50% no-repeat;
+	}
+}
+
+.slider__toggle-mark {
+	position: relative;
+	bottom: 23px;
+	left: 0;
+	text-align: center;
+	width: 100%;
+	z-index: 3;
+	.clearfix;
+}
+.b-toggle-mark {
+	background: rgba(255, 255, 255, 0.5);
+	display: inline-block;
+	height: @toggle;
+	margin: 0 3px;
+	position: relative;
+	width: @toggle;
+	.radius;
+	&:hover {
+		background: rgba(255, 255, 255, 1);
+		.sadow(@sh: 0px 0px 1px 2px rgba(0,0,0,0.2););
+	}
+}
+
+
+
+/* ========== UTP ========== */
+
+.b-utp {
+	padding: 60px 0 0 0;
+	text-align: center;
+	font: normal 1.5em @generalFont;
+}
+
+
+
+/* ========== CONTENT ========== */
+
+.postSet {
+	width: @postContentWidth;
+	float: left;
+	position: relative;
+}
+.dateCommentLink {
+	color: @dateCommentLink;
+	&:link, :visited {
+	color: @dateCommentLink;
+	}
+	&:hover {
+		color: #c00;
+	}
+}
+/* ========== */
+
+.b-content {
+	margin: 120px 0 0 0;
+	.clearfix;
+}
+.content__section {
+	float: left;
+	min-height: @postHeight;
+	position: relative;
+	width: 25%;
+}
+.b-content-img {
+	overflow: hidden;
+	.postSet;
+	&:hover > .mesage {
+		display: block;
+	}
+}
+.content-img__link {
+	display: block;
+	height: 100%;
+	position: absolute;
+	width: 100%;
+}
+.mesage {
+	background: #333 url(../../img/logo.png) 50% 20% no-repeat;
+	color: #fff;
+	display: none;
+	text-align: center;
+	&:hover > .mesage__text {
+		top: 50%;
+	}
+}
+.mesage__text {
+	background: #333;
+	border-top: solid 5px #c00;
+	display: block;
+	font: bold 1.8em Regular;
+	height: 50%;
+	padding: 10px 0;
+	position: absolute;
+	text-transform: uppercase;
+	text-shadow: 0px 3px 1px #000;
+	top: 0%;
+	width: 100%;
+	.transition (@transition: all .5s cubic-bezier(1, -0.5, .1, 1););
+}
+.b-content-head {
+	font: bold 1.6em Cond;
+	padding: 15px 0 10px 0;
+	.postSet;
+	h1,h2,h3,h4,h5,h6 {
+		font-size: inherit !important;
+		font-weight: inherit;
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+}
+.b-date-comment {
+	color: @dateCommentLink;
+	font-size: 0.75em;
+	padding: 5px 0 0 0;
+	.postSet;
+	a {
+	.dateCommentLink;
+	}
+}
+a.b-date-comment {
+	display: block;
+	padding: 5px 0 0 0;
+	.dateCommentLink;
+}
+.b-text {
+	color: #888;
+	font-size: 0.8em;
+	.postSet;
+}
+.b-text__link {
+	color: @link;
+	.continueLink;
+}
+.b-text_post {
+	padding: 15px 0 0 0;
+	p {
+	padding: 5px 0 0 0;
+	}
+}
+.b-text_bold {
+	font-family: BoldCond;
+	font-size: 1.1em;
+}
+/* ========== */
+
+.continueLink {
+	color: @link;
+	&:link, :visited {color: @link;}
+	&:hover {text-decoration: underline !important;}
+}
+
+/* ========== */
+
+.b-continue {
+	bottom: 0;
+	display: block;
+	font-size: 0.8em;
+	font-weight: bold;
+	left: 0;
+	position: absolute;
+	text-align: right;
+	width: @postContentWidth;
+	a {
+		.continueLink;
+	}
+}
+a.b-continue {
+	.continueLink;
+}
+.b-continue_italic {
+	font-style: italic;
+}
+.b-continue_normal {
+	font-style: normal;
+}
+
+
+
+/* ========== FOOTER ========== */
+
+.b-wrapper_footer {
+	min-height: (@footerHeight)-(@footerPadding*2);
+}
+.wrapper__column_footer {
+	float: left;
+	min-height: (@footerHeight)-(@footerPadding*2);
+	position: relative;
+	width: 25%;
+}
+.wrapper__column_logo {
+	
+}
+.b-logo_footer {
+	height: @footerLogo;
+}
+.wrapper__column_twitter {
+	
+}
+.wrapper__column_latest {
+	
+}
+.wrapper__column_flickr {
+	
+}
+.b-footer-header {
+	color: #777;
+	font-family: Cond;
+	font-size: 0.6em;
+	text-shadow: 1px 1px 0px #fff;
+}
+.b-text_footer {
+	padding: 10px 0 0 0;
+	p {
+		padding: 5px 0 0 0;
+	}
+}
+.b-social-img {
+	float: left;
+	overflow: hidden;
+}
+.b-social-img_flickr {
+	height: @flickrImage;
+	margin: 10px 10px 0 0;
+	width: @flickrImage;
+	.borderImage (@brdim: 5px;);
+	.transition (@transition: all .15s ease-in-out;);
+	&:hover {
+		.sadow (@sh: 0px 4px 4px -1px rgba(0,0,0,0.5););
+		.borderImage (@brdim: 1px;);
+	}
+	a {
+		display: block;
+		height: 100%;
+		width: 100%;
+	}
+	img {
+		height: 100%;
+	}
+}
+.b-social-img__link {
+	
+}

@@ -90,6 +90,7 @@ textarea {
 
 body {
     margin: 0;
+	padding: 0;
 }
 
 /* ==========================================================================
@@ -292,11 +293,11 @@ dl,
 menu,
 ol,
 ul {
-    margin: 1em 0;
+    margin:0;
 }
 
 dd {
-    margin: 0 0 0 40px;
+    margin: 0;
 }
 
 /**
@@ -306,7 +307,7 @@ dd {
 menu,
 ol,
 ul {
-    padding: 0 0 0 40px;
+    padding: 0;
 }
 
 /**
