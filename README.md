@@ -32,7 +32,7 @@ workflow
 
 > gulpfile.js package.json (preparation GULP)
 
-> gh-pages branch ([show app in net]())
+> gh-pages branch ([SHOWmeTHISpage](http://arsenykonohov.github.io/first-template))
 
 > IE-test ([IE-tab for GoogleChrome](https://chrome.google.com/webstore/detail/ie-tab/hehijbfgiekmjfkfjpbkbammjbdenadd?utm_source=chrome-ntp-icon))
 
