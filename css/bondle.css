@@ -253,7 +253,7 @@ textarea {
 }
 /*  logo  */
 .b-logo {
-  background: url(../../img/logo.png) 0 50% no-repeat;
+  background: url(../img/logo.png) 0 50% no-repeat;
   display: block;
   width: 160px;
 }
@@ -320,7 +320,7 @@ textarea {
   width: 50%;
 }
 .b-toggle-left:hover {
-  background: url(../../img/arrow-left.png) 0 50% no-repeat;
+  background: url(../img/arrow-left.png) 0 50% no-repeat;
 }
 .b-toggle-right {
   display: block;
@@ -330,7 +330,7 @@ textarea {
   width: 50%;
 }
 .b-toggle-right:hover {
-  background: url(../../img/arrow-right.png) 100% 50% no-repeat;
+  background: url(../img/arrow-right.png) 100% 50% no-repeat;
 }
 .slider__toggle-mark {
   position: relative;
@@ -427,7 +427,7 @@ textarea {
   width: 100%;
 }
 .mesage {
-  background: #333333 url(../../img/logo.png) 50% 20% no-repeat;
+  background: #333333 url(../img/logo.png) 50% 20% no-repeat;
   color: #fff;
   display: none;
   text-align: center;
