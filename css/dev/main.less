@@ -61,10 +61,6 @@
 	border-radius: 			@value;
 }
 
-.borderImage (@brdim) {
-	border: @brdim solid rgba(237,237,237,0.1);
-}
-
 .dateCommentLink {
 	color: inherit;
 	&:link, :visited {
@@ -214,6 +210,7 @@
 	width: @sliderWidth;
 }
 .slider__list {
+	background: #de521f;
 	height: 100%;
 	position: absolute;
 	width: 100%;
@@ -314,6 +311,8 @@
 	width: 25%;
 }
 .b-content-img {
+	background: #414aba;
+	height: @postContentWidth;
 	overflow: hidden;
 	.postSet;
 	&:hover > .mesage {
@@ -471,14 +470,15 @@ a.b-continue {
 	overflow: hidden;
 }
 .b-social-img_flickr {
+	background: #428302;
+	border: 5px solid #eee;
 	height: @flickrImage;
 	margin: 10px 10px 0 0;
 	width: @flickrImage;
-	.borderImage (@brdim: 5px;);
 	.transition (@transition: all .15s ease-in-out;);
 	&:hover {
+		border: 1px solid #eee;
 		.sadow (@sh: 0px 4px 4px -1px rgba(0,0,0,0.5););
-		.borderImage (@brdim: 1px;);
 	}
 	a {
 		display: block;
